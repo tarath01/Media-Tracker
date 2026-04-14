@@ -1,19 +1,12 @@
 class Movie {
-    constructor(description, dueDate) {
-        this.description = description;
-        this.dueDate = new Date(dueDate);
-    }
-
-    get hasInvalidDueDate() {
-        return this.dueDate.toString() === "Invalid Date";
-    }
-    get isPastDue() {
-        const today = new Date();
-        return this.dueDate.getTime() < today.getTime();
+    constructor(title, genre, rating) {
+        this.title = title;
+        this.genre = genre;
+        this.rating = rating;
     }
 
     toString() {
-        return `${this.dueDate.toDateString()} - ${this.description}`;
+        return `${this.title} | ${this.genre} | Rating ${this.rating}`;
     }
 }
 

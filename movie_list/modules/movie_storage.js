@@ -7,7 +7,7 @@ const movieStorage = {
         const movieArray = storage.retrieve("movie");
         if(movieArray) {
             for(let obj of movieArray) {
-                movies.push(new Movie(obj.description, obj.dueDate));
+                movies.push(new Movie(obj.title, obj.genre, obj.rating));
             }
         }
         return movies;
