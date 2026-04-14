@@ -1,9 +1,8 @@
 import movieList from "movie_list";
-import Movie from "movie";
 import * as dom from "DOM";
 
 const displayMovie = () => {
-    movie_list.sortByDueDate();
+    movies.sort();
 
     const select = dom.get("#movie");
     select.textContent = "";  // clear previous tasks
@@ -22,15 +21,12 @@ dom.load(() => {
         
         const newMovie = new movie(
             dom.getValue("#movie"),
-            dom.getValue("#genre"));
+            dom.getValue('#genre'));
         
         let message = "";
-        if (newMovie.description === "") {
+        if (newMovie.title === "") {
             message = "Movie is required. ";
         }
-        if (newMovie.hasInvalidDueDate || newMovie.isPastDue) {
-            message += "Due Date must be a valid date in the future."
-        } 
 
         if (message === "") {
             movie_list.load().add(newMovie).save();
@@ -43,11 +39,11 @@ dom.load(() => {
         }     
     });
     
-    dom.addClick("#clear_movies", () => {
+    dom.addClick("#clear_movie", () => {
         movie_list.clear();
         dom.clear("#movie");
-        dom.clear("#movie");
         dom.clear("#genre");
+        dom.clear("#rating");
         dom.clear("#msg");
         dom.focus("#movie");
     });  
