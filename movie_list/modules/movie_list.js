@@ -2,7 +2,7 @@ import movieStorage from 'movie_storage';
 
 let movies = [];         // private variable
 
-const movie_list = {
+const movieList = {
     load() {
         movies = movieStorage.retrieve();
         return this;
@@ -40,4 +40,4 @@ const movie_list = {
     }
 };
 
-export default movie_list;
+export default movieList;

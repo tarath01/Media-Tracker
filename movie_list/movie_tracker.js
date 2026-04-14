@@ -1,13 +1,14 @@
 import movieList from "movie_list";
+import Movie from "movie";
 import * as dom from "DOM";
 
 const displayMovie = () => {
-    movies.sort();
+    movieList.sort();
 
-    const select = dom.get("#movie");
+    const select = dom.get("#movies");
     select.textContent = "";  // clear previous tasks
 
-    for (let movie of movie_list) {
+    for (let movie of movieList) {
         const opt = document.createElement("option");
         opt.appendChild(document.createTextNode(movie));
         select.appendChild(opt);
@@ -19,9 +20,11 @@ dom.load(() => {
     dom.addClick("#add_movie", () => {
         dom.clear("#msg");             // clear any previous message
         
-        const newMovie = new movie(
+        const newMovie = new Movie(
             dom.getValue("#movie"),
-            dom.getValue('#genre'));
+            dom.getValue('#genre'),
+            dom.getValue('#rating')
+        );
         
         let message = "";
         if (newMovie.title === "") {
@@ -29,7 +32,7 @@ dom.load(() => {
         }
 
         if (message === "") {
-            movie_list.load().add(newMovie).save();
+            movieList.load().add(newMovie).save();
             dom.clear("#movie");
             dom.clear("#genre");
             displayMovie();
@@ -40,7 +43,7 @@ dom.load(() => {
     });
     
     dom.addClick("#clear_movie", () => {
-        movie_list.clear();
+        movieList.clear();
         dom.clear("#movie");
         dom.clear("#genre");
         dom.clear("#rating");
