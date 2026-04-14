@@ -1,6 +1,6 @@
 import movieStorage from 'movie_storage';
 
-let movie = [];         // private variable
+let movies = [];         // private variable
 
 const movie_list = {
     load() {
@@ -8,29 +8,29 @@ const movie_list = {
         return this;
     },
     save() {
-        movieStorage.store(movie);
+        movieStorage.store(movies);
         return this;
     },
     add(movie) {
-        movie.push(movie);
+        movies.push(movie);
         return this;
     },
     delete(i) {
         this.sortByDueDate(); // sort so in same order as page
-        movie.splice(i, 1);
+        movies.splice(i, 1);
         return this;
     },
     clear() {
-        movie.length = 0;
+        movies.length = 0;
         movieStorage.remove();
         return this;
     },
     sortByDueDate() {
-        movie.sort((a, b) => a.dueDate - b.dueDate);
+        movies.sort((a, b) => a.dueDate - b.dueDate);
         return this;
     },
     *[Symbol.iterator]() { 
-        for (let movie of movie) {
+        for (let movie of movies) {
             yield movie;
         }
     }
