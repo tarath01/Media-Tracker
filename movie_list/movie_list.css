@@ -7,46 +7,56 @@ body {
     border: 1px solid black;
     border-radius: 1em;
 }
+
 h1, h3 {
     color: cornflowerblue;
 }
+
 div {
     margin-bottom: 1em;
 }
+
 label {
     display: inline-block;
     width: 7em;
 }
-input[type="text"], input[type = "number"], select#genre {
+
+input[type="text"], input[type="number"], select#genre {
     width: 13em;
+    margin-right: 0.5em;
     padding: 3px;
     box-sizing: border-box;
-    margin-right: 0.5em;
 }
+
 button {
-    width: 7.25em;
+    width: 8em;
     padding: 5px;
     cursor: pointer;
 }
-select #movies {
+
+select#movies {
     width: 22em;
     height: 10em;
-    margin: 4.5em 0 1em 0;
+    margin: 4.5em 0 1em 0; /* Pushed down slightly to align with form inputs */
     padding: 1em;
     overflow-x: scroll;
     overflow-y: scroll;
 }
+
 p {
     color: red;
     text-align: center;
 }
+
 #form {
     float: left;
     width: 22em;
 }
+
 #display {
-    float: right; 
+    float: right;
 }
-.clear { 
-    clear: both; 
+
+.clear {
+    clear: both;
 }
