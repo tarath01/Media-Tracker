@@ -5,7 +5,7 @@
 - [New Concepts](#new-concepts)
 - [Screenshots](#screenshots)
   - [Main Page](#main-page)
-  - [Testing Data](#testing-data)
+  - [Validation](#validation)
   - [Completed](#completed)
 - [Maintainers](#maintainers)
 ------------------
@@ -27,16 +27,15 @@ and a rating from 1-10 that you wish to give the movie.
 ## Screenshots
 
 ### Main Page
-![Main Page]()
+![Main Page](images/main-page.png)
 
 ---------
-
-### Testing Data
-![Testing Data]()
+### Validation
+![Validation](images/movie.png)
 
 ----------
 ### Completed
-![Completed]()
+![Completed](images/completed.png)
 
 ----------
 ### Maintainers
