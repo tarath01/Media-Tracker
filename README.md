@@ -6,6 +6,7 @@
 - [Screenshots](#screenshots)
   - [Main Page](#main-page)
   - [Validation](#validation)
+  - [Clear](#clear)
   - [Completed](#completed)
 - [Maintainers](#maintainers)
 ------------------
@@ -34,6 +35,10 @@ and a rating from 1-10 that you wish to give the movie.
 ![Validation](images/movie.png)
 
 ----------
+### Clear
+![Clear](images/clear.png)
+
+-----------------
 ### Completed
 ![Completed](images/completed.png)
 
