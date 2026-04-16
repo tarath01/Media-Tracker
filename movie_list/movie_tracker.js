@@ -1,7 +1,21 @@
+/**
+ *
+ * @author Taylor Rath & Brayden Hermanson
+ * @date 04/15/2026
+ * @repository https://github.com/tarath01/Media-Tracker
+ * @summary
+ * Handles users input, validation, sorting, deletion, and displaying.
+*/
+
 import movieList from "movie_list";
 import Movie from "movie";
 import * as dom from "DOM";
 
+/**
+ * Displays all movies after sorting
+ * @function displayMovie
+ * @returns
+ */
 const displayMovie = () => {
     movieList.sort();
 
@@ -15,8 +29,14 @@ const displayMovie = () => {
     }  
     dom.focus("#movie");
 }
-
+/**
+ * Initilizes when DOM is ready
+ * @function DOMContentLoaded
+ */
 dom.load(() => {
+    /**
+     * adds new movie
+     */
     dom.addClick("#add_movie", () => {
         dom.clear("#msg");             // clear any previous message
         
@@ -25,7 +45,7 @@ dom.load(() => {
             dom.getValue('#genre'),
             dom.getValue('#rating')
         );
-        
+        // Validation message
         let message = "";
         if (newMovie.title === "") {
             message = "Movie is required. ";
@@ -41,7 +61,9 @@ dom.load(() => {
             dom.select("#movie");
         }     
     });
-    
+    /**
+     * Clears all movies
+     */
     dom.addClick("#clear_movie", () => {
         movieList.clear();
         dom.clear("#movie");
@@ -49,8 +71,10 @@ dom.load(() => {
         dom.clear("#rating");
         dom.clear("#msg");
         dom.focus("#movie");
-    });  
-
+    });
+    /**
+     * Deletes movies
+     */
     dom.addClick("#delete_movie", () => {
         dom.clear("#msg");             // clear any previous message
         
@@ -62,6 +86,7 @@ dom.load(() => {
             displayMovie();
         }
     });
+    // Initial Load and Display
     movieList.load()
     displayMovie();
 });
